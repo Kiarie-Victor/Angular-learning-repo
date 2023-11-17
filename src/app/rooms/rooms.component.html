@@ -1,0 +1,30 @@
+<h1>{{hotelName}}</h1>
+<button (click)="toggle()">toggle</button>
+<div [hidden]=hideRooms>
+<b>Number Of Rooms:</b>
+<div [innerText]="numberOfRooms"></div>
+</div>
+
+<!-- {{rooms ?? "no rooms"}} -->
+
+<div *ngIf="rooms .availableRooms > 0">
+    Room List:
+    <tr>
+        <th>Even/Odd</th>
+        <th>Room Number</th>
+        <th>Room Type</th>
+        <th>Room Price</th>
+        <th>Amenities</th>
+        <th>Check in Time</th>
+       </tr>
+    <tr *ngFor="let room of roomList; let e = even; let o = odd;">
+        <td>{{e ? "Even": "Odd"}}</td>
+        <td>{{room.roomNumber}}</td>
+        <td>{{room.roomType}}</td>
+        <td>{{room.price}}</td>
+        <td>{{room.amenities}}</td>
+        <td>{{room.checkInTime}}</td>
+
+
+    </tr>
+</div>
