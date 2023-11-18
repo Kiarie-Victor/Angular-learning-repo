@@ -1,0 +1,28 @@
+nullish coalesce
+?? 
+
+Binding Syntax
+
+a) Interpolation - {{variable name}} just like in django :)
+b) Property Binding (html properties) - eg <div [innerText] = "variable"></div>
+c) Event Binding (banana syntax) - eg <button (click) = "toggle()">
+
+Directives
+structural and attribute directives.
+Builtin Directives
+
+a) *ngIf - eg <div *ngIf = "condition"
+b) *ngFor - e <tr *ngFor = "let room of rooms; let e = even;"
+c) [ngStyle] - eg [ngStyle] = "{color:"blue""
+d) [ngClass]
+
+Pipes.
+are used for data transformation and dont change actual  object
+upperCase, currency, date, number, Percent, Json, Slice, Async pipes.
+
+LifeCycleHooks and Component communication
+ng add ngx-bootstrap
+component communication - two components interacting with each other.
+@input @output
+@ViewChild and ContentChild
+Using services
