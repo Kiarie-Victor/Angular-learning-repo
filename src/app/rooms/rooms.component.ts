@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss']
+  styleUrls: ['./rooms.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RoomsComponent implements OnInit{
 
@@ -53,6 +54,24 @@ export class RoomsComponent implements OnInit{
 
   toggle (){
     this.hideRooms = !this.hideRooms
+  }
+
+  selectRoom(room:RoomList){
+    console.log(room)
+  }
+
+  addRoom(){
+    let newRoom: RoomList={
+      roomNumber:4,
+      amenities:"Air bla",
+      price:7557,
+      rating:6.8,
+      roomType:"SoftLife",
+      checkInTime: new Date("11-4-2023"),
+      checkOutTime:new Date("14-4-2023"),
+
+    }
+    this.roomList = [...this.roomList, newRoom]
   }
 
 }

@@ -5,3 +5,12 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+.even{
+    background-color: rgb(32, 32, 185) ;
+    color: white;
+}
+
+.odd{
+    background-color: tomato;
+    color: whitesmoke;
+}

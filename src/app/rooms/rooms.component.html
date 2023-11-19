@@ -7,8 +7,12 @@
 <!-- {{roomList | json}} -->
 </div>
 
-<div [ngStyle]="{color:'green'}" *ngIf="rooms .availableRooms > 0">
-   <app-rooms-list [rooms]="roomList"></app-rooms-list>
+<div>
+   <button class="btn btn-warn" (click)="addRoom()">Add Room</button>
+</div>
+
+<div *ngIf="rooms.availableRooms > 0">
+   <app-rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)"></app-rooms-list>
 </div>
 
 <button (click)="toggle()">toggle</button>

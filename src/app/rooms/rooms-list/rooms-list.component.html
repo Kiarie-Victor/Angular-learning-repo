@@ -1,6 +1,6 @@
 Room List:
 <table class="table">
-<tr  [ngStyle]="{color:'yellow',padding:'20px'}">
+<tr>
     <th>Even/Odd</th>
     <th>Room Number</th>
     <th>Room Type</th>
@@ -8,9 +8,10 @@ Room List:
     <th>Amenities</th>
     <th>Check in Time</th>
     <th>Rating</th>
+    <th>Select</th>
 
    </tr>
-<tr [ngClass]="e ? 'even' : 'odd'"   *ngFor="let room of rooms | slice :0:4; let e = even; let o = odd;">
+<tr [ngClass]="e ? 'even' : 'odd'"   *ngFor="let room of rooms; let e = even; let o = odd;">
     <td>{{e ? "Even": "Odd"}}</td>
     <td>{{room.roomNumber}}</td>
     <td>{{room.roomType}}</td>
@@ -18,6 +19,8 @@ Room List:
     <td>{{room.amenities}}</td>
     <td>{{room.checkInTime | date:'short': '' }}</td>
     <td>{{room.rating | number: '1.0-0' :'en-us'}}</td>
-
+    <td>
+        <button class="btn btn-primary" (click)="selectRoom(room)">Select</button>
+    </td>
 </tr>
 </table> 
